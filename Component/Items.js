@@ -1,15 +1,14 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View, Dimensions, TouchableOpacity } from 'react-native';
+import { Alert,StyleSheet, Image, Text, View, Dimensions, TouchableOpacity } from 'react-native';
 import Rectangle from './Rectangle';
 
 const Items = (props) => {
     const {item, onPress} = props;
-
     return(
         <TouchableOpacity style={styles.container} onPress={onPress}>
             <Rectangle width={250} height={250}>
-                <Image style={styles.itemImage} source={{uri:`${item.source}about.jpg`}}></Image>
-                <Text style={styles.title}>{item.name}</Text>
+                <Image style={styles.itemImage} source={{uri:`${item.thumbnail}`}}></Image>
+                <Text style={styles.title}>{item.category}</Text>
             </Rectangle>
         </TouchableOpacity>
     );
@@ -37,6 +36,7 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundColor: 'white',
         padding: 5,
+        textAlign: 'center',
     },
 });
 
